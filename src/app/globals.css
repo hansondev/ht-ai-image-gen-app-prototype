@@ -1,0 +1,234 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ----------------------------------------------------------------------------
+ * Open Studio token system.
+ * Light mode is canonical (warm cream + espresso ink + coral accent).
+ * Dark mode is a warm inversion (charcoal, not pure black).
+ * ------------------------------------------------------------------------- */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+  --radius-sm: 0.5rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --animate-fade-in: fade-in 0.3s ease-out;
+  --animate-fade-up: fade-up 0.4s ease-out;
+}
+
+/* Light canvas — canonical. */
+:root,
+.light {
+  --radius: 0.75rem;
+
+  --background: oklch(0.985 0.008 80);
+  --foreground: oklch(0.22 0.015 60);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.015 60);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.015 60);
+
+  --primary: oklch(0.7 0.17 35);
+  --primary-foreground: oklch(0.99 0.005 80);
+
+  --secondary: oklch(0.95 0.012 80);
+  --secondary-foreground: oklch(0.22 0.015 60);
+
+  --muted: oklch(0.94 0.01 80);
+  --muted-foreground: oklch(0.48 0.012 60);
+
+  --accent: oklch(0.93 0.015 80);
+  --accent-foreground: oklch(0.22 0.015 60);
+
+  --destructive: oklch(0.6 0.2 25);
+
+  --border: oklch(0.9 0.01 80);
+  --input: oklch(0.92 0.008 80);
+  --ring: oklch(0.7 0.17 35);
+
+  --chart-1: oklch(0.7 0.17 35);
+  --chart-2: oklch(0.7 0.1 160);
+  --chart-3: oklch(0.78 0.14 75);
+  --chart-4: oklch(0.6 0.15 330);
+  --chart-5: oklch(0.65 0.12 230);
+
+  --sidebar: oklch(0.97 0.008 80);
+  --sidebar-foreground: oklch(0.22 0.015 60);
+  --sidebar-primary: oklch(0.7 0.17 35);
+  --sidebar-primary-foreground: oklch(0.99 0.005 80);
+  --sidebar-accent: oklch(0.93 0.015 80);
+  --sidebar-accent-foreground: oklch(0.22 0.015 60);
+  --sidebar-border: oklch(0.9 0.01 80);
+  --sidebar-ring: oklch(0.7 0.17 35);
+}
+
+/* Dark canvas — warm inversion. */
+.dark {
+  --background: oklch(0.16 0.008 60);
+  --foreground: oklch(0.96 0.005 80);
+
+  --card: oklch(0.2 0.008 60);
+  --card-foreground: oklch(0.96 0.005 80);
+
+  --popover: oklch(0.2 0.008 60);
+  --popover-foreground: oklch(0.96 0.005 80);
+
+  --primary: oklch(0.78 0.16 35);
+  --primary-foreground: oklch(0.18 0.02 60);
+
+  --secondary: oklch(0.24 0.008 60);
+  --secondary-foreground: oklch(0.96 0.005 80);
+
+  --muted: oklch(0.22 0.008 60);
+  --muted-foreground: oklch(0.7 0.008 60);
+
+  --accent: oklch(0.26 0.008 60);
+  --accent-foreground: oklch(0.96 0.005 80);
+
+  --destructive: oklch(0.65 0.22 25);
+
+  --border: oklch(0.28 0.008 60);
+  --input: oklch(0.24 0.008 60);
+  --ring: oklch(0.78 0.16 35);
+
+  --chart-1: oklch(0.78 0.16 35);
+  --chart-2: oklch(0.72 0.1 160);
+  --chart-3: oklch(0.8 0.14 75);
+  --chart-4: oklch(0.68 0.15 330);
+  --chart-5: oklch(0.72 0.12 230);
+
+  --sidebar: oklch(0.18 0.008 60);
+  --sidebar-foreground: oklch(0.96 0.005 80);
+  --sidebar-primary: oklch(0.78 0.16 35);
+  --sidebar-primary-foreground: oklch(0.18 0.02 60);
+  --sidebar-accent: oklch(0.24 0.008 60);
+  --sidebar-accent-foreground: oklch(0.96 0.005 80);
+  --sidebar-border: oklch(0.28 0.008 60);
+  --sidebar-ring: oklch(0.78 0.16 35);
+}
+
+/* ----------------------------------------------------------------------------
+ * Keyframes — calm, minimal
+ * ------------------------------------------------------------------------- */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Generating-state aurora — soft drifting orbs + sheen. Used by the
+   result stage while an image is being generated. Three offset orbs and a
+   diagonal sweep create an "ai is cooking" atmosphere without resorting to
+   marching stripes or scanlines. */
+@keyframes orb-drift-a {
+  0%, 100% { transform: translate3d(-8%, -6%, 0) scale(1); }
+  50%      { transform: translate3d(12%, 8%, 0) scale(1.1); }
+}
+@keyframes orb-drift-b {
+  0%, 100% { transform: translate3d(10%, 4%, 0) scale(1.05); }
+  50%      { transform: translate3d(-12%, -10%, 0) scale(0.95); }
+}
+@keyframes orb-drift-c {
+  0%, 100% { transform: translate3d(0%, 8%, 0) scale(1); }
+  50%      { transform: translate3d(8%, -8%, 0) scale(1.15); }
+}
+@keyframes aurora-sweep {
+  0%   { transform: translateX(-60%); opacity: 0; }
+  40%  { opacity: 0.8; }
+  60%  { opacity: 0.8; }
+  100% { transform: translateX(60%); opacity: 0; }
+}
+@keyframes status-dot {
+  0%, 100% { opacity: 0.35; }
+  50%      { opacity: 1; }
+}
+
+/* ----------------------------------------------------------------------------
+ * Base layer
+ * ------------------------------------------------------------------------- */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11", "calt";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+  ::selection {
+    background-color: oklch(0.7 0.17 35 / 0.25);
+    color: var(--foreground);
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Utilities — short list, used sparingly
+ * ------------------------------------------------------------------------- */
+
+@layer utilities {
+  .card-interactive {
+    @apply transition-all duration-200 ease-out;
+  }
+  .card-interactive:hover {
+    @apply shadow-md -translate-y-0.5;
+  }
+
+  /* Single subtle radial wash — landing hero only. */
+  .hero-glow {
+    background-image: radial-gradient(
+      ellipse at 50% 0%,
+      oklch(0.7 0.17 35 / 0.08) 0%,
+      transparent 60%
+    );
+  }
+}

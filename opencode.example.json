@@ -1,0 +1,39 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "n8n-mcp": {
+      "type": "remote",
+      "url": "https://n8n.example.com/mcp-server/http",
+      "headers": {
+        "Authorization": "Bearer <N8N_MCP_JWT>"
+      },
+      "enabled": false,
+      "timeout": 70000
+    },
+    "coolify": {
+      "type": "local",
+      "command": ["cmd", "/c", "npx", "-y", "@masonator/coolify-mcp"],
+      "environment": {
+        "COOLIFY_BASE_URL": "https://coolify.example.com",
+        "COOLIFY_ACCESS_TOKEN": "<COOLIFY_ACCESS_TOKEN>"
+      },
+      "enabled": false,
+      "timeout": 70000
+    },
+    "s3": {
+      "enabled": false
+    },
+    "rustfs-mcp": {
+      "type": "local",
+      "enabled": false,
+      "command": [
+        "pwsh",
+        "-NoLogo",
+        "-NoProfile",
+        "-Command",
+        "$env:AWS_ENDPOINT_URL = [Environment]::GetEnvironmentVariable('RUSTFS_ENDPOINT_URL', 'User') ?? [Environment]::GetEnvironmentVariable('RUSTFS_ENDPOINT_URL', 'Machine'); $env:AWS_ACCESS_KEY_ID = [Environment]::GetEnvironmentVariable('RUSTFS_ACCESS_KEY_ID', 'User') ?? [Environment]::GetEnvironmentVariable('RUSTFS_ACCESS_KEY_ID', 'Machine'); $env:AWS_SECRET_ACCESS_KEY = [Environment]::GetEnvironmentVariable('RUSTFS_SECRET_ACCESS_KEY', 'User') ?? [Environment]::GetEnvironmentVariable('RUSTFS_SECRET_ACCESS_KEY', 'Machine'); $env:AWS_REGION = 'ap-southeast-2'; $env:RUST_LOG = 'info'; & 'C:\\Users\\<you>\\.cargo\\bin\\rustfs-mcp.exe'"
+      ],
+      "timeout": 30000
+    }
+  }
+}

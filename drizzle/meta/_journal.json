@@ -1,0 +1,62 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1762409965425,
+      "tag": "0000_chilly_the_phantom",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1766719908715,
+      "tag": "0001_last_warpath",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1778576486417,
+      "tag": "0002_high_starbolt",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1778583098269,
+      "tag": "0003_lazy_darwin",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1778588700833,
+      "tag": "0004_brave_northstar",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1778660196539,
+      "tag": "0005_numerous_grim_reaper",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1778666909482,
+      "tag": "0006_rich_barracuda",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1778750000000,
+      "tag": "0007_admin_dashboard",
+      "breakpoints": true
+    }
+  ]
+}
