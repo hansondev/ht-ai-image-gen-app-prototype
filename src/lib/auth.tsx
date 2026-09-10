@@ -120,7 +120,9 @@ export const auth = betterAuth({
     adminPlugin(),
     polar({
       client: polarClient,
-      createCustomerOnSignUp: true,
+      createCustomerOnSignUp:
+        Boolean(process.env.POLAR_ACCESS_TOKEN) &&
+        process.env.POLAR_ACCESS_TOKEN !== "polar_",
       use: [
         checkout({
           products: CREDIT_PACKS.map((p) => ({ productId: p.productId, slug: p.slug })),
